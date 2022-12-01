@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "yJ6gC5GpFHw1wixXpeqNVZw2A0qLxsTae7OBgFStqVs=",
+  "Source": "rekeningrijdenGateway",
+  "BasePath": "_content/rekeningrijdenGateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

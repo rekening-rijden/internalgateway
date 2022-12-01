@@ -1,0 +1,153 @@
+{
+  "Routes": [
+    ////
+    //Routeservice api
+    ////
+    {
+      //Health check endpoint
+      "DownstreamPathTemplate": "/api/v1/actuator/health",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "routeservice",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/routeservice/health",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      //Get routes for ui in period
+      "DownstreamPathTemplate": "/api/v1/routes/ui/{vehicleId}/{month}/{year}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "routeservice",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/routeservice/route/ui/{vehicleId}/{month}/{year}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      //Get routes for billing in period
+      "DownstreamPathTemplate": "/api/v1/routes/{vehicleId}/{month}/{year}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "routeservice",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/routeservice/route/{vehicleId}/{month}/{year}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      //Get single route by id
+      "DownstreamPathTemplate": "/api/v1/routes/{routeId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "routeservice",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/routeservice/route/{routeId}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    ////
+    //Tax config api
+    ////
+    {
+      //Interact with base prices
+      "DownstreamPathTemplate": "/baseprice/{engineType}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "taxservice",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/taxservice/baseprice/{engineType}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
+    },
+    {
+      //Get all base prices
+      "DownstreamPathTemplate": "/baseprice/all",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "taxservice",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/taxservice/baseprice/all",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      //Interact with road tax
+      "DownstreamPathTemplate": "/roadtax/{roadType}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "taxservice",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/taxservice/roadtax/{roadType}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
+    },
+    {
+      //Get all road type taxes
+      "DownstreamPathTemplate": "/roadtax/all",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "taxservice",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/taxservice/roadtax/all",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      //Interact with time taxes
+      "DownstreamPathTemplate": "/timetax/{daysofweek}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "taxservice",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/taxservice/timetax/{daysofweek}",
+      "UpstreamHttpMethod": [ "Get", "put" ]
+    },
+    ////
+    //Track influx API
+    ////
+    {
+      //Save datapoints to sytem
+      "DownstreamPathTemplate": "/datapoint",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "trackservice",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/trackservice/datapoint",
+      "UpstreamHttpMethod": [ "Post" ]
+    }
+
+    ////
+    //TODO: Billing api
+    ////
+    ////
+    //TODO: Auth service
+    ////
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5000"
+  }
+}
