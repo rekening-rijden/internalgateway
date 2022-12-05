@@ -754,11 +754,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Luc Janssen\\Documents\\FHICT\\Semester 7\\2nd try\\rekeningrijdenGateway\\rekeningrijdenGateway\\rekeningrijdenGateway.csproj",
+      "projectUniqueName": "C:\\Users\\Luc Janssen\\Documents\\FHICT\\Semester 7\\2nd try\\internalgateway\\rekeningrijdenGateway\\rekeningrijdenGateway.csproj",
       "projectName": "rekeningrijdenGateway",
-      "projectPath": "C:\\Users\\Luc Janssen\\Documents\\FHICT\\Semester 7\\2nd try\\rekeningrijdenGateway\\rekeningrijdenGateway\\rekeningrijdenGateway.csproj",
+      "projectPath": "C:\\Users\\Luc Janssen\\Documents\\FHICT\\Semester 7\\2nd try\\internalgateway\\rekeningrijdenGateway\\rekeningrijdenGateway.csproj",
       "packagesPath": "C:\\Users\\Luc Janssen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Luc Janssen\\Documents\\FHICT\\Semester 7\\2nd try\\rekeningrijdenGateway\\rekeningrijdenGateway\\obj\\",
+      "outputPath": "C:\\Users\\Luc Janssen\\Documents\\FHICT\\Semester 7\\2nd try\\internalgateway\\rekeningrijdenGateway\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Luc Janssen\\AppData\\Roaming\\NuGet\\NuGet.Config",
