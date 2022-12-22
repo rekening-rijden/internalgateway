@@ -1,0 +1,64 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  # Docker build variables
+  dockerRegistryServiceConnection: 'a07125c2-c0d8-407d-b2f3-5c1bf0ea38ab'
+  imageRepository: 'internal-gateway'
+  containerRegistry: 'rekeningrijden.azurecr.io'
+  dockerfilePath: '**/Dockerfile'
+  tag: 'latest'
+  
+  # Artifact variables
+  artifactName: 'internal-gateway'
+
+steps:
+- task: UseDotNet@2
+  displayName: Use .Net
+  inputs:
+    version: '6.0.x'
+    includePreviewVersions: true
+
+- task: DockerInstaller@0
+  displayName: Install Docker
+  inputs:
+    dockerVersion: 17.09.0-ce
+
+- task: HelmInstaller@0
+  displayName: Install Helm
+  inputs:
+    helmVersion: '2.14.1'
+    installKubectl: true
+
+- task: DotNetCoreCLI@2
+  displayName: Build App
+  inputs:
+    command: build
+    projects: '**/*.csproj'
+- task: Docker@2
+  displayName: Docker build and Push
+  inputs:
+    command: buildAndPush
+    repository: $(imageRepository)
+    dockerfile: $(dockerfilePath)
+    containerRegistry: $(dockerRegistryServiceConnection)
+    tags:
+          $(tag)
+    buildContext: .
+
+- task: HelmDeploy@0
+  displayName: Helm deploy
+  inputs:
+    namespace: 'deployment'
+    command: 'package'
+    chartPath: 'helm'
+
+- task: PublishBuildArtifacts@1
+  displayName: Publish Build Artifact
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: $(artifactName)
+    publishLocation: 'Container'
