@@ -5,6 +5,7 @@
       "DownstreamPathTemplate": "/health",
       "DownstreamScheme": "http",
       "ServiceName": "authentication-service",
+      "ServiceNamespace": "default",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
@@ -12,6 +13,7 @@
       "DownstreamPathTemplate": "/api/v1/user/{userId}",
       "DownstreamScheme": "http",
       "ServiceName": "authentication-service",
+      "ServiceNamespace": "default",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
@@ -19,6 +21,7 @@
       "DownstreamPathTemplate": "/api/v1/user/login",
       "DownstreamScheme": "http",
       "ServiceName": "authentication-service",
+      "ServiceNamespace": "default",
       "UpstreamHttpMethod": [ "Post" ]
     }
   ],
@@ -172,7 +175,7 @@
 
   "GlobalConfiguration": {
     "ServiceDiscoveryProvider": {
-      "Namespace": "Default",
+      "Namespace": "default",
       "Type": "KubernetesServiceDiscoveryProvider"
     }
   }
