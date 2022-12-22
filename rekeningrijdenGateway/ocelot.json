@@ -1,6 +1,13 @@
 {
   "Routes": [
     {
+      "UpstreamPathTemplate": "/user/healthcheck",
+      "DownstreamPathTemplate": "/health",
+      "DownstreamScheme": "http",
+      "ServiceName": "authentication-service",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
       "UpstreamPathTemplate": "/user/{userId}",
       "DownstreamPathTemplate": "/api/v1/user/{userId}",
       "DownstreamScheme": "http",

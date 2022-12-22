@@ -13,6 +13,8 @@ services.AddControllers();
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
 services.AddOcelot().AddKubernetes();
+services.AddHealthChecks();
+services.AddMvc(options => options.EnableEndpointRouting = false);
 
 host.ConfigureAppConfiguration(config => config.AddJsonFile("ocelot.json"));
 
@@ -28,6 +30,10 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseMvc();
+
+app.MapHealthChecks("/health");
 
 app.UseOcelot().Wait();
 
