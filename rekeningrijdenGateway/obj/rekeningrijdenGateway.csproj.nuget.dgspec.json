@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luc Janssen\\Documents\\FHICT\\Semester 7\\2nd try\\internalgateway\\rekeningrijdenGateway\\rekeningrijdenGateway.csproj": {}
+    "C:\\Users\\Nick\\Documents\\Repos\\Fontys S6\\Proftaak\\InternalGateway\\rekeningrijdenGateway\\rekeningrijdenGateway.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luc Janssen\\Documents\\FHICT\\Semester 7\\2nd try\\internalgateway\\rekeningrijdenGateway\\rekeningrijdenGateway.csproj": {
+    "C:\\Users\\Nick\\Documents\\Repos\\Fontys S6\\Proftaak\\InternalGateway\\rekeningrijdenGateway\\rekeningrijdenGateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luc Janssen\\Documents\\FHICT\\Semester 7\\2nd try\\internalgateway\\rekeningrijdenGateway\\rekeningrijdenGateway.csproj",
+        "projectUniqueName": "C:\\Users\\Nick\\Documents\\Repos\\Fontys S6\\Proftaak\\InternalGateway\\rekeningrijdenGateway\\rekeningrijdenGateway.csproj",
         "projectName": "rekeningrijdenGateway",
-        "projectPath": "C:\\Users\\Luc Janssen\\Documents\\FHICT\\Semester 7\\2nd try\\internalgateway\\rekeningrijdenGateway\\rekeningrijdenGateway.csproj",
-        "packagesPath": "C:\\Users\\Luc Janssen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luc Janssen\\Documents\\FHICT\\Semester 7\\2nd try\\internalgateway\\rekeningrijdenGateway\\obj\\",
+        "projectPath": "C:\\Users\\Nick\\Documents\\Repos\\Fontys S6\\Proftaak\\InternalGateway\\rekeningrijdenGateway\\rekeningrijdenGateway.csproj",
+        "packagesPath": "C:\\Users\\Nick\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nick\\Documents\\Repos\\Fontys S6\\Proftaak\\InternalGateway\\rekeningrijdenGateway\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Luc Janssen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nick\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -48,9 +52,13 @@
               "target": "Package",
               "version": "[18.0.0, )"
             },
+            "Ocelot.Provider.Kubernetes": {
+              "target": "Package",
+              "version": "[18.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.4.0, )"
             }
           },
           "imports": [
